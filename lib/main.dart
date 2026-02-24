@@ -20,11 +20,11 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => CounterModel(),
       child: MaterialApp(
-        title: 'Flutter Demo',
+        title: 'Damar Counter',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         ),
-        home: const MyHomePage(title: 'Damar Bagas'),
+        home: const MyHomePage(title: 'Damar Counter'),
         debugShowCheckedModeBanner: false,
       ),
     );
