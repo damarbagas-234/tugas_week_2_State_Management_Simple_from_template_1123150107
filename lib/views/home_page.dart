@@ -20,16 +20,45 @@ class MyHomePage extends StatelessWidget {
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text('Nilai counter:'),
+              children: <Widget>[
+                const Text('You have pushed the button this many times:'),
                 Text(
-                  '${counterModel.angka}',
+                  counterModel.angka.toString(),
                   style: Theme.of(context).textTheme.headlineMedium,
                 ),
-                const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: counterModel.increment,
-                  child: const Text('Tambah'),
+              ],
+            ),
+          ),
+          floatingActionButton: Padding(
+            padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: FloatingActionButton(
+                    backgroundColor: Theme.of(
+                      context,
+                    ).colorScheme.inversePrimary,
+                    onPressed: () {
+                      counterModel.decrement();
+                    },
+                    tooltip: 'Decrement',
+                    child: const Icon(Icons.remove),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8),
+                  child: FloatingActionButton(
+                    backgroundColor: Theme.of(
+                      context,
+                    ).colorScheme.inversePrimary,
+                    onPressed: () {
+                      counterModel.increment();
+                    },
+                    tooltip: 'Increment',
+                    child: const Icon(Icons.add),
+                  ),
                 ),
               ],
             ),
